@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="Add_number" format="xml">
+      <types:example format="xml" element="{http://tempuri.org/}Add" location="examples/add.xml"/>
+    </types:type>
+    <types:type name="Number1" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: integer]]></types:shape>
+    </types:type>
+    <types:type name="number2" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: integer]]></types:shape>
+    </types:type>
+    <types:type name="result" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#588de8e0-5216-4f20-a025-90015f67a62e">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="Number1"/>
+        </types:message>
+      </types:input-event>
+      <types:output-event>
+        <types:message>
+          <types:payload type="Add_number"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#735936cb-22b4-48b8-8993-df25449117b4">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:variables>
+          <types:variable name="Number2" type="number2"/>
+          <types:variable name="Number1" type="Number1"/>
+        </types:variables>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#2006ce99-f916-41a1-ad8a-d52a9db0f7d7">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="result"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#52a7dfc4-742f-4813-985f-7fe60d8cca01">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="Number1"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

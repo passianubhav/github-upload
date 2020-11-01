@@ -1,0 +1,9 @@
+{
+  "sampleData": {
+    "588de8e0-5216-4f20-a025-90015f67a62e": {
+      "vars-Number2": "sample_data/defaultnumbertype.dwl",
+      "payload": "sample_data/defaultstringtype.dwl",
+      "vars-Number1": "sample_data/defaultnumbertype_1.dwl"
+    }
+  }
+}
